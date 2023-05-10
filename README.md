@@ -1,4 +1,4 @@
-# DataCleaningNashvilleHousing
+# Project Summary
 In this project I took Nashville housing data and molded it to be more usable for analysis.  I started by removing the excess info from the date column because it included 0:00 minutes and seconds for every column. (ALTER TABLE, CONVERT(), UPDATE) Next, I noticed that the data was missing addresses
 for certain properties. A pattern I noticed was that a duplicate ParcelID resulted in a duplicate property address.  Using this info I was able to populate the NULL values by self joining the table to itself on ParcelID where the UniqueID wasn’t equal and where PropertyAddress was NULL. Next, I wanted
 to split the PropertyAddress column into multiple columns so the data could be further analyzed by address and city.  The data had address and city separated by a “,” in every row so I used SUBSTRING(), CHARINDEX()  and LEN() to sort the data before the “,” into column PropertySplitAddress and all the
